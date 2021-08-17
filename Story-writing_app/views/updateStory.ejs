@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <title>Update <%= story.title %> </title>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+<main>
+    <form class="update-form form" action="/stories/<%= story._id %>" method="POST" enctype="multipart/form-data">    
+        <div class="indi">
+        <label for="title">Update title</label>
+        <input type="text" id="title" name="title" class="input" value="<%= story.title %> " maxlength="44" required>
+        </div>
+        
+        <div class="indi">
+        <label for="snippet">Update snippet</label>
+        <input type="text" id="snippet" name="snippet" class="input" value="<%= story.snippet %> " maxlength="44" required>
+        </div>   
+
+        <div class="indi">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" class="input" value="<%= story.author %> " maxlength="44" required>
+        </div>       
+    
+        <div class="indi">
+        <label for="story">Update story</label>
+        <textarea name="story" id="story"><%= story.story %></textarea>
+        </div>
+
+        <div class="indi">
+            <label for="color">Your story's background color</label>
+            <input type="color" id="color" name="color" value="<%= story.color %>">
+        </div>       
+
+        <div class="indi thumb">
+            <label for="thumbnail" id="thumb-label">Upload thumbnail</label>
+            <input type="file" name="thumbnail" id="thumbnail">
+            <i class="far fa-image fa-3x"></i>
+        </div>  
+    
+        <button id="submit">Submit</button>
+    </form>
+</main>
+
+<%- include('./partials/footer') %> 
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#story' ), {
+          toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+          heading: {
+            options: [
+              { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+              { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+              { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+          ]
+      }
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+nav {
+  background-color: #e04343;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .logo {
+  padding: 50px 0px 20px 20px;
+}
+
+nav .home {
+  font-size: 35px;
+  color: white;
+  padding: 65px 100px 20px 0px;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav .nav-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 60px 100px 10px 100px;
+}
+
+nav .nav-li {
+  margin: 15px 20px;
+  list-style: none;
+}
+
+nav .nav-li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.all {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.stories {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  margin: 20px 40px;
+  margin-left: 90px;
+  padding-bottom: 100px;
+  gap: 1em;
+}
+
+.stories .story {
+  width: 300px;
+  border-radius: 10px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.stories a {
+  text-decoration: none;
+}
+
+.stories img {
+  width: 100%;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.stories .text {
+  padding-left: 10px;
+}
+
+.stories .text .title {
+  font-size: 25px;
+  color: red;
+}
+
+.stories .text .snippet {
+  color: grey;
+  padding: 10px 2px;
+}
+
+.stories .text .author {
+  color: blue;
+}
+
+.story:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form {
+  font-size: 20px;
+  font-weight: bolder;
+  display: -ms-grid;
+  display: grid;
+  margin-top: 20px;
+  gap: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 130px;
+  padding-bottom: 100px;
+}
+
+.form .indi {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 10px;
+}
+
+.form .input {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 10px;
+  width: 200%;
+  max-width: 712px;
+  height: 140%;
+  padding: 0px 10px;
+}
+
+.form .story-label {
+  margin-bottom: 20px;
+}
+
+.form #thumbnail {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  -webkit-clip-path: rect(1px, 1px, 1px, 1px);
+          clip-path: rect(1px, 1px, 1px, 1px);
+}
+
+.form input#thumbnail:focus + label {
+  outline: transparent;
+}
+
+.form input#thumbnail:focus-within + label {
+  outline: transparent;
+}
+
+.form #thumb-label {
+  display: -ms-grid;
+  display: grid;
+}
+
+.form .ck.ck-reset.ck-editor.ck-rounded-corners {
+  max-width: 700px;
+}
+
+.form i {
+  color: #00b7ff;
+}
+
+.form button {
+  margin: 20px 0px 10px 0px;
+  background-color: #e62c2c;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 10px;
+  max-width: 356px;
+}
+
+.about {
+  margin: 20px;
+}
+
+.indi-story {
+  margin: 20px 40px;
+}
+
+.indi-story .link {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.indi-story .delete {
+  position: absolute;
+  background-color: red;
+  left: 75%;
+  top: 35%;
+}
+
+.indi-story .update {
+  position: absolute;
+  background-color: #208ce4;
+  left: 85%;
+  top: 35%;
+}
+
+.indi-story .title {
+  margin-left: 30px;
+  width: 880px;
+  word-wrap: break-word;
+  font-size: 40px;
+}
+
+.indi-story .story-content {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 100px 30px;
+}
+
+.indi-story img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+canvas {
+  position: relative;
+  left: 35%;
+  margin-top: 20px;
+}
+
+.auth-form {
+  color: white;
+  background-color: #e04343;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 10%;
+  width: 25%;
+  margin-bottom: 40px;
+  font-weight: bolder;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.auth-form h1 {
+  text-align: center;
+}
+
+.auth-form .err {
+  color: red;
+}
+
+.auth-form .indi {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+}
+
+.auth-form .indi input {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 5px;
+  height: 35px;
+  padding: 0px 10px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.auth-form .indi button {
+  font-size: 20px;
+  font-weight: bolder;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background-color: white;
+  margin-top: -20px;
+  width: 110px;
+  padding: 10px 0px;
+}
+
+.question {
+  text-align: center;
+  font-size: 20px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.auth-prompt {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.about h1 {
+  text-align: center;
+}
+
+.about p {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.about h2 {
+  margin: 140px 100px 0px 100px;
+  margin-top: 140px;
+}
+
+.about .fa-github {
+  margin-left: 100px;
+  margin-top: 20px;
+  color: black;
+}
+
+.about .fa-youtube {
+  color: red;
+  margin-left: 10px;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding: 40px;
+  background-color: #333;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+}
+
+footer .fa-github {
+  margin-right: 10px;
+  color: white;
+}
+
+footer .fa-youtube {
+  margin-left: 20px;
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */

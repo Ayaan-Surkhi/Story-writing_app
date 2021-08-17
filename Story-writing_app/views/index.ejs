@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header') %>
+
+<body>
+<%- include('./partials/nav') %>
+
+<h1 class="all">All stories</h1>
+<main>
+<div class="stories">
+    <% if (stories.length > 0) { %>
+        <% stories.forEach(story => { %>
+            <div class="story">
+            <a href="/stories/<%= story._id %> ">
+                    <div class="img">
+                <% if (story.thumbnail === '') { %>
+                    <img src="/images/CodeXpress.jpg" alt="story">                     
+                <% } else { %>
+                    <img src="/<%= story.thumbnail %> " alt="story">    
+                <% } %>              
+                    </div>  
+            <div class="text">             
+            <h3 class="title"><%= story.title %></h3> 
+            <p class="snippet"><%= story.snippet %></p>          
+            <h4 class="author"> <%= story.author %></h4>
+            </div>    
+        </a> 
+        </div>
+            <% }) %>
+    <% } else {%>
+        <p>Nothing to read</p>
+    <% } %>     
+
+    </div>
+</main>
+
+<%- include('./partials/footer'); %>    
+</body>
+</html>

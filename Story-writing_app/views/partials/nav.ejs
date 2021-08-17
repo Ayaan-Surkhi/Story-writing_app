@@ -1,0 +1,16 @@
+<nav>
+    <a href="/"> <img class="logo" src="/images/CodeXpress.jpg" alt="logo"> </a>
+    <a href="/" class="home">CodeXpress Story Hub</a>  
+
+    <ul class="nav-ul">
+      <% if(user){ %>
+        <li class="nav-li">Hello <%= user.username %>! </li>   
+        <li class="nav-li"><a href="/logout">Log out</a></li>       
+      <% }else{ %>
+        <li class="nav-li"><a href="/login">Log in</a></li>
+        <li class="nav-li"><a href="/signup">Sign up</a></li>          
+      <% } %>  
+      <li class="nav-li"><a href="/about">About</a></li>
+      <li class="nav-li"><a href="/stories/new-story">Add New Story</a></li>
+    </ul>
+</nav>

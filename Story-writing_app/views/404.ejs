@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="/images/favicon.ico">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.js"></script>
+        <title>Code Xpress Story Hub</title>
+    </head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <script>
+        let image404;
+        let eye1;
+        let eye2;
+        
+        function preload(){
+        image404 = loadImage('/images/404.jpg');
+        }
+        
+        function setup () {
+            createCanvas(400, 400);
+            eye1 = new Eye(180, 140, 10, 255);
+            eye2 = new Eye(215, 140, 10, 255);
+        }
+
+        function draw () {
+           background(255);
+           fill(180, 20, 20);
+           noStroke();
+           image(image404, 100, 80, 200, 200);
+           circle(180, 140, 25);
+           circle(215, 140, 25);
+           eye1.display();
+           eye2.display();
+           eye1.update();
+           eye2.update();
+        }
+
+        class Eye {
+            constructor(x, y, size, col){
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.col = col;
+            }
+
+            update = () => {
+                this.angle = atan2(mouseY - this.y, mouseX - this.x);
+            }
+
+            display = () => {
+                push();
+                translate(this.x, this.y);
+                fill(this.col);
+                rotate(this.angle);
+                ellipse(this.size/2, 0, this.size, this.size);
+                pop();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
